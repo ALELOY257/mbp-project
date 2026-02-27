@@ -8,10 +8,8 @@ export default async function AppLayout({ children }: { children: React.ReactNod
 
   return (
     <div>
-      <nav style={{ padding: 12, borderBottom: "1px solid #ddd" }}>
-        <a href="/feed">Feed</a>
-      </nav>
-      <main style={{ padding: 12 }}>{children}</main>
+      
+      <main style={{  }}>{children}</main>
     </div>
   );
 }

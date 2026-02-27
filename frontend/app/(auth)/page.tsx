@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { signIn } from "next-auth/react";
+import { fonts } from "@/lib/fonts";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
@@ -10,49 +11,58 @@ export default function LoginPage() {
 
 
   return (
-    <div className="flex items-center justify-center min-h-screen p-4">
-      <div className="w-full max-w-5xl rounded-3xl bg-white shadow-2xl overflow-hidden">
-        <div className="grid grid-cols-1 lg:grid-cols-2">
-          {/* left card*/}
-          <div className="bg-[url('/auth-left.jpg')] bg-cover bg-center relative hidden lg:block">
+    <div className="h-screen bg-gray-100 p-6">
+      <div className="grid min-h-[calc(100vh-3rem)] grid-cols-1 lg:grid-cols-[70%_30%] gap-6">
 
+
+        {/* left card*/}
+        <div className="relative hidden lg:block rounded-3xl shadow-2xl overflow-hidden bg-[url('/auth-left.jpg')] bg-cover bg-center">
+
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+          <div className="absolute bottom-10 left-10">
+            <h1 className={`${fonts.playfair.className} text-7xl leading-tight text-white`}>
+              Ready To Create?
+            </h1>
           </div>
-          {/*Right card*/}
-          <div className="p-8 flex items-center">
-            <div className="w-full max-w-sm mx-auto">
-              <h1 className="text-2xl font-semibold mb-6">Sign in</h1>
-              <form className="space-y-4">
-                <label className="block">
-                  <span className="text-sm font-medium text-gray-700">Email</span>
-                  <input
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    className="mt-1 block w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
-                    placeholder="you@example.com"
-                  />
-                </label>
 
-                <label className="block">
-                  <span className="text-sm font-medium text-gray-700">Password</span>
-                  <input
-                    type="password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    className="mt-1 block w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
-                    placeholder="••••••••"
-                  />
-                </label>
+        </div>
+        {/*Right card*/}
+        <div className="flex items-center justify-center p-8">
+          <div className="w-full max-w-md absolute bottom-30">
+            <h1 className="text-4xl font-semibold mb-6">Welcome Back!</h1>
+            <form className="space-y-4">
+              <label className="block">
+                <span className="text-sm font-medium text-gray-700">Email</span>
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="mt-1 block w-full shadow-2xl rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                  placeholder="you@example.com"
+                />
+              </label>
 
-                <button className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">
-                  Sign in
-                </button>
-              </form>
+              <label className="block">
+                <span className="text-sm font-medium text-gray-700">Password</span>
+                <input
+                  type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className="mt-1 block w-full shadow-2xl rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                  placeholder="••••••••"
+                />
+              </label>
 
-            </div>
+              <button className="w-full bg-black text-white py-2 rounded hover:bg-[#15616d] transition-colors duration-300 ease-in-out">
+                Sign in
+              </button>
+            </form>
+
           </div>
         </div>
       </div>
+
+
 
 
 
