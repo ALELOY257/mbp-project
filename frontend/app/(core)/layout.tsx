@@ -1,6 +1,7 @@
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import { redirect } from "next/navigation";
+import BottomNav from "@/components/nav/BottomNav";
 
 
 export default async function AppLayout({ children }: { children: React.ReactNode }) {
@@ -12,9 +13,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
 
   return (
     <div>
-      <nav style={{ padding: 12, borderBottom: "1px solid #ddd" }}>
-        <a href="/feed">Feed</a>{" "}
-      </nav>
+      <BottomNav/>
 
       <main style={{ padding: 12 }}>{children}</main>
 

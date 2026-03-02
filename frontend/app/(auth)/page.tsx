@@ -4,9 +4,19 @@ import { useState } from "react";
 import { signIn } from "next-auth/react";
 import { fonts } from "@/lib/fonts";
 
+
+
 export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  async function handleGoogleLogin() {
+    setLoading(true);
+    await signIn("google", {
+      callbackUrl: "/feed",
+    });
+  }
 
 
 
@@ -56,6 +66,12 @@ export default function LoginPage() {
               <button className="w-full bg-black text-white py-2 rounded hover:bg-[#15616d] transition-colors duration-300 ease-in-out">
                 Sign in
               </button>
+              <button
+              disabled={loading}
+                type="button"
+                onClick={handleGoogleLogin}
+                className="w-full bg-white border border-gray-300 py-2 rounded-lg hover:bg-gray-50 transition"
+              >{loading ? "Redirecting..." : "Continue with Google"}</button>
             </form>
 
           </div>
