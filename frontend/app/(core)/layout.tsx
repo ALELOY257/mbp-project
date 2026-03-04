@@ -12,11 +12,12 @@ export default async function AppLayout({ children }: { children: React.ReactNod
   if (!session) redirect("/"); 
 
   return (
-    <div>
+    <div className="min-h-screen bg-background">
+      
+
+      <main className="pb-28 px-4">{children}</main>
+
       <BottomNav/>
-
-      <main style={{ padding: 12 }}>{children}</main>
-
     </div>
   );
 }

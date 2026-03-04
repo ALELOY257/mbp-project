@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { Home, Search, Plus, User, Settings } from "lucide-react"
+import { Home, Search, Plus, User, Bookmark } from "lucide-react"
 
 export default function BottomNav() {
   const pathname = usePathname()
@@ -12,21 +12,14 @@ export default function BottomNav() {
     { href: "/search", icon: Search },
     { href: "/create", icon: Plus, isCenter: true },
     { href: "/profile", icon: User },
-    { href: "/settings", icon: Settings}
+    { href: "/bookmarks", icon: Bookmark}
   ]
 
   return (
-    <div className="fixed bottom-6 left-1/2 -translate-x-1/2 w-[min(640px,calc(100%-2rem))] z-50">
+    <div className="fixed bottom-6 left-1/2 -translate-x-1/2 w-[min(640px,calc(100%-2rem))] h-16 z-50 bg-white/60 backdrop-blur-sm rounded-3xl shadow-sm">
       
-      {/* NAV BACKGROUND WITH NOTCH */}
-      <div
-        className="relative h-16 bg-white/90 backdrop-blur-xl shadow-xl border border-gray-200"
-        style={{
-          borderRadius: "24px",
-          clipPath:
-            "path('M0 24 Q0 0 24 0 H40% Q50% 0 50% 18 Q50% 0 60% 0 Hcalc(100% - 24px) Q100% 0 100% 24 V100% H0 Z')",
-        }}
-      />
+      
+      
 
       {/* NAV CONTENT */}
       <div className="absolute inset-0 flex items-center justify-around px-6">
@@ -51,11 +44,11 @@ export default function BottomNav() {
             <Link
               key={href}
               href={href}
-              className={`text-gray-600 ${
-                active ? "text-pink-600" : ""
-              }`}
+              className={`text-gray-600 ${active ? "text-pink-600" : ""}`}
             >
-              <Icon size={22} />
+              <div className={`p-2 rounded-full transition-shadow ${active ? "bg-white shadow-lg ring-2 ring-white" : "hover:bg-white/5"}`}>
+                <Icon size={22} />
+              </div>
             </Link>
           )
         })}
