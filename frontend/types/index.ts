@@ -1,41 +1,42 @@
-type User = {
+export type User = {
     id: string
     name: string
-
 }
 
-type Project = {
+export type Project = {
     id: string
-    userid: string
-    tags: []
-    portraitid: string
+    author: Pick<User, 'id' | 'name'>
+    tags: string[]
+    portrait: Block
+    likeCount: number
+    title: string
+    createdAt: string
 }
 
-type Portrait = {
-    // this should extend the blocks as it could be ay of those, but i dont know the correct implementation yet
-}
 
-type Imageblock = {
+export type Block = Imageblock | VideoBlock | MusicBlock | PlaceBlock | TextBlock
+
+export type Imageblock = {
     type: "image"
     id: string
     url?: string
     filepath?: string
     connections: number[]
     author: string
-    position: number[] // should be a tuple xy
+    position: [number, number] // should be a tuple xy
 }
 
-type VideoBlock = {
+export type VideoBlock = {
     type: "video"
     id: string
     url?: string
     filepath?: string
     connections: number[]
     author: string
-    position: number[]
+    position: [number, number]
 }
 
-type MusicBlock = { 
+export type MusicBlock = { 
     type: "music"
     id: string
     url: string
@@ -43,19 +44,26 @@ type MusicBlock = {
     appId?: string
     filePath?: string
     author: string
-    position: number[]
+    position: [number, number]
     
 }
 
 
 
-type PlaceBlock = {
+export type PlaceBlock = {
     type: "place"
+    id: string
+    name: string
+    connections: number[]
     url: string
-    position: number[]
+    position: [number, number]
 }
 
-type TextBlock = {
+export type TextBlock = {
     type: "text"
-    position: number[]
+    id:string
+    author: string
+    connections: number[]
+    position: [number, number]
+    content: string
 }
