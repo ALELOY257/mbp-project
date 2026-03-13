@@ -1,23 +1,25 @@
 import { Project, Block } from "@/types";
 import { Heart } from "lucide-react";
 import Link from "next/link";
+import ImagePortrait from "./portraits/ImagePortrait";
 
 interface FeedCardProps {
     project: Project
+    isActive: boolean
 }
 
 function renderPortrait(portrait: Block) {
     switch (portrait.type) {
         case "image":
-            return <div>Image</div>
+            return <ImagePortrait block={portrait}/>
         case "video":
-            return <div>Video</div>
+            return <div className="absolute inset-0 ">Video</div>
         case "music":
-            return <div>Music</div>
+            return <div className="absolute inset-0 ">Music</div>
         case "place":
-            return <div>Place</div>
+            return <div className="absolute inset-0 ">Place</div>
         case "text":
-            return <div>Text</div>
+            return <div className="absolute inset-0 ">Text</div>
         default:
             const _exhaustive: never = portrait
             return null
@@ -33,12 +35,13 @@ export default function FeedCard({ project }: FeedCardProps) {
 
     return (
         <div className="w-full rounded-2xl overflow-hidden bg-white shadow-sm">
-            <div className="aspect-square w-full bg-gray-100">
+            <div className="relative h-[65vh] rounded-2xl overflow-hidden">
                 {renderPortrait(portrait)}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                <h2 className="absolute bottom-4 left-4 text-white font-bold text-xl">{title}</h2>
             </div>
 
             <div className="p-3 flex flex-col items-center gap-2">
-                <h1 className="text-lg font-bold text-center">{title}</h1>
                 <p className="text-sm text-gray-500 text-center">{author.name}</p>
 
                 <div className="flex gap-2 flex-wrap justify-center mt-2">
