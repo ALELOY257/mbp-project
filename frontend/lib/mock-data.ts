@@ -72,6 +72,7 @@ export const MOCK_PROJECTS: Project[] = [
         title: "Beats",
         createdAt: "2026-03-08T10:30:00Z"
     },
+    
     {
         id: "5",
         author: {id: "3", name: "Ben"},
@@ -104,6 +105,21 @@ export const MOCK_PROJECTS: Project[] = [
         title: "My poem",
         createdAt: "2026-03-08T10:30:00Z"
     },
-    
+    {
+        id: "7",
+        author: {id: "2", name: "Juanita"},
+        tags: ["phonk"],
+        portrait: {
+            type: "music",
+            id: "7",
+            filePath: "/media/audio/watermello-phonk-phonk-drift-496890.mp3",
+            connections: [],
+            author: "2",
+            position: [0,0]
+        },
+        likeCount: 4789,
+        title: "Beats",
+        createdAt: "2026-03-08T10:30:00Z"
+    },
     
 ]

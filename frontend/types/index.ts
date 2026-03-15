@@ -39,7 +39,7 @@ export type VideoBlock = {
 export type MusicBlock = { 
     type: "music"
     id: string
-    url: string
+    url?: string
     connections: number[]
     appId?: string
     filePath?: string

@@ -2,6 +2,8 @@ import { Project, Block } from "@/types";
 import { Heart } from "lucide-react";
 import Link from "next/link";
 import ImagePortrait from "./portraits/ImagePortrait";
+import VideoPortrait from "./portraits/VideoPortrait";
+import MusicPortrait from "./portraits/MusicPortrait";
 
 interface FeedCardProps {
     project: Project
@@ -13,9 +15,9 @@ function renderPortrait(portrait: Block) {
         case "image":
             return <ImagePortrait block={portrait}/>
         case "video":
-            return <div className="absolute inset-0 ">Video</div>
+            return <VideoPortrait block={portrait}/>
         case "music":
-            return <div className="absolute inset-0 ">Music</div>
+            return <MusicPortrait block={portrait}/>
         case "place":
             return <div className="absolute inset-0 ">Place</div>
         case "text":
