@@ -80,10 +80,14 @@ export const MOCK_PROJECTS: Project[] = [
         portrait: {
             type: "place",
             id: "5",
-            url: "https://www.youtube.com/watch?v=JA1Jm4Mi_J4",
+            url: "https://maps.google.com/?q=4.7110,-74.0721",
             connections: [],
             name: "My own cafe",
-            position: [0,0]
+            position: [0,0],
+            coordinates:{
+                lat: 4.7110,
+                lng: -74.0721
+            }
         },
         likeCount: 1,
         title: "My new cafe",

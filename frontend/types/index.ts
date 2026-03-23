@@ -55,8 +55,12 @@ export type PlaceBlock = {
     id: string
     name: string
     connections: number[]
-    url: string
+    url?: string
     position: [number, number]
+    coordinates?:{
+        lat:number
+        lng:number
+    }
 }
 
 export type TextBlock = {

@@ -4,6 +4,8 @@ import Link from "next/link";
 import ImagePortrait from "./portraits/ImagePortrait";
 import VideoPortrait from "./portraits/VideoPortrait";
 import MusicPortrait from "./portraits/MusicPortrait";
+import PlacePortrait from "./portraits/PlacePortrait";
+import TextPortrait from "./portraits/TextPortrait";
 
 interface FeedCardProps {
     project: Project
@@ -19,9 +21,9 @@ function renderPortrait(portrait: Block) {
         case "music":
             return <MusicPortrait block={portrait}/>
         case "place":
-            return <div className="absolute inset-0 ">Place</div>
+            return <PlacePortrait block={portrait}/>
         case "text":
-            return <div className="absolute inset-0 ">Text</div>
+            return <TextPortrait block={portrait}/>
         default:
             const _exhaustive: never = portrait
             return null
