@@ -112,7 +112,7 @@ export const MOCK_PROJECTS: Project[] = [
         portrait: {
             type: "music",
             id: "7",
-            filePath: "/media/audio/watermello-phonk-phonk-drift-496890.mp3",
+            filepath: "/media/audio/watermello-phonk-phonk-drift-496890.mp3",
             connections: [],
             author: "2",
             position: [0,0]

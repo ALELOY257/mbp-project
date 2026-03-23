@@ -42,7 +42,7 @@ export type MusicBlock = {
     url?: string
     connections: number[]
     appId?: string
-    filePath?: string
+    filepath?: string
     author: string
     position: [number, number]
     

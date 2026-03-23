@@ -39,7 +39,7 @@ export default function FeedCard({ project }: FeedCardProps) {
         <div className="w-full rounded-2xl overflow-hidden bg-white shadow-sm">
             <div className="relative h-[65vh] rounded-2xl overflow-hidden">
                 {renderPortrait(portrait)}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none" />
                 <h2 className="absolute bottom-4 left-4 text-white font-bold text-xl">{title}</h2>
             </div>
 
