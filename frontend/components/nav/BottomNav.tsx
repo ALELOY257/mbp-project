@@ -10,7 +10,7 @@ export default function BottomNav() {
   const navItems = [
     { href: "/feed", icon: Home },
     { href: "/search", icon: Search },
-    { href: "/create", icon: Plus, isCenter: true },
+    { href: "/projects", icon: Plus, isCenter: true },
     { href: "/profile", icon: User },
     { href: "/bookmarks", icon: Bookmark}
   ]
